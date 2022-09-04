@@ -1,0 +1,25 @@
+<div class="overflow-container" [style.width]="containerWidth">
+  <div
+    class="side-dash-container"
+    [@dashSlide]="slidePosition"
+    (@dashSlide.done)="handleDone($event)"
+  >
+    <div class="side-dash-position-trigger" (click)="onAnimate()">
+      {{ drawerSymbol }}
+    </div>
+    <div class="side-dash-info-container">
+      <div class="dash-component">Number<br />Name</div>
+      <div class="dash-component">
+        <mat-checkbox
+          [checked]="name"
+          (click)="toggle(name)"
+          *ngFor="let name of checkboxDefaults"
+          >{{ name }}</mat-checkbox
+        >
+      </div>
+      <div class="dash-component">Number<br />Name</div>
+      <div class="dash-component">Number<br />Name</div>
+      <div class="dash-component">Number<br />Name</div>
+    </div>
+  </div>
+</div>
